@@ -13,7 +13,7 @@ ENV HOST=0.0.0.0
 ENV IS_DOCKER=true
 ENV LANG="C.UTF-8"
 ENV NODE_ENV=production
-ENV PORT=3000
+#ENV PORT=3000
 ENV PUPPETEER_CHROMIUM_REVISION=${PUPPETEER_CHROMIUM_REVISION}
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 ENV USE_CHROME_STABLE=${USE_CHROME_STABLE}
@@ -49,7 +49,7 @@ RUN if [ "$USE_CHROME_STABLE" = "true" ]; then \
 # Run everything after as non-privileged user.
 USER blessuser
 
-# Expose the web-socket and HTTP ports
-EXPOSE 3000
+# Expose the web-socket and HTTP ports (commment for heroku)
+# EXPOSE 3000
 
 CMD ["./start.sh"]
